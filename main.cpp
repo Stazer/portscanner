@@ -19,10 +19,12 @@ int main ( int amount , char ** arguments )
         unsigned short maximum = 1023 ;
 
         if ( amount > 2 )
-                maximum = std::atoi ( arguments [ 2 ] ) ;
-
-        if ( amount > 1 )
+        {
                 minimum = std::atoi ( arguments [ 1 ] ) ;
+                maximum = std::atoi ( arguments [ 2 ] ) ;
+        }
+		else if ( amount > 1 )
+                maximum = std::atoi ( arguments [ 1 ] ) ;
 
         int socket = -1 ;
 
